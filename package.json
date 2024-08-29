@@ -1,0 +1,9 @@
+{
+    "name": "my-project",
+    "private": true,
+    "scripts": {
+        "install:all": "npm --prefix frontend install -f && npm --prefix backend install",
+        "start:frontend": "npm --prefix frontend start",
+        "start:backend": "npm --prefix backend start"
+    }
+}
