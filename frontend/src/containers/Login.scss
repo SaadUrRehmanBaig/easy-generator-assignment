@@ -1,0 +1,86 @@
+.login_container {
+    // background-color: #2a2b2c;
+    height: 100vh;
+    width: 100%;
+    margin: 0px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-card {
+    height: 450px;
+    width: 30vw;
+    background-color: #fff;
+    transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+    display: flex;
+    flex-direction: column; /* Align children in a column */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+  }
+
+
+  .footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 20px;
+    width: 90%;
+  }
+
+  .footer > * {
+    margin-bottom: 10px;
+  }  
+
+  .sign-up {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #e24f55; /* Set the color for the sign-up link */
+    text-decoration: none; /* Remove the default underline on the link */
+    font-weight: bold; /* Optionally set the font weight */
+  }
+
+  .logo{
+    height: 50px;
+  }
+
+  .login-logo{
+    padding-top: 10px;
+    margin-bottom: 20px;
+    position: relative; 
+  }
+
+  .login-button{
+      height: 44px;
+      background-color: #f60 !important;
+      font-size: 16px !important;
+      font-weight: 400 !important;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #fff;
+  }
+
+  .signup-button{
+     background-color: #363738 !important;
+      font-size: 12px !important;
+      font-weight: 400;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #fff;
+  }
+
+  .break-line {
+    width: 100%;
+    margin: 20px 0; /* Adjust margin as needed */
+    border-top: 1px solid #ccc; /* Change color as needed */
+  }

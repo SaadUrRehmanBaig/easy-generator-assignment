@@ -1,0 +1,16 @@
+.welcome_screen{
+    text-align: center;
+    padding: 100px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.welcom_screen_content{
+    h1 {
+        color: #333;
+      }
+}
