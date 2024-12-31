@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+data:
+  MONGO_URI: "mongodb://192.168.1.49:27017/easy-generator"
+  PORT: "3000"
+  FE_URL: "http://localhost:3200"
+  ALLOWED_METHODS: "GET,HEAD,PUT,PATCH,POST,DELETE"
+  ALLOWED_HEADERS: "Content-Type, Authorization"
