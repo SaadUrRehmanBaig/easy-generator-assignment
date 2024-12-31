@@ -1,15 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import * as Joi from '@hapi/joi';
 import * as dotenv from 'dotenv';
-import * as fs from 'fs';
 
 @Injectable()
 export class EnvService {
   private readonly envConfig: { [key: string]: string };
 
   constructor() {
-    const config = dotenv.parse(fs.readFileSync('.env'));
-    this.envConfig = this.validateInput(config);
+    dotenv.config();
+    this.envConfig = this.validateInput(process.env);
   }
 
   private validateInput(envConfig: { [key: string]: string }): {
