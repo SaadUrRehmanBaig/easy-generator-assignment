@@ -1,22 +1,28 @@
-name: Test Self-Hosted Runner
+name: Deploy to Vagrant
 
 on:
   push:
     branches:
-      - main  # Adjust the branch as needed
-  workflow_dispatch:  # Allows manual trigger
+      - main
 
 jobs:
-  test-runner:
-    runs-on: self-hosted  # Use the self-hosted label
-    steps:
-      - name: Check Runner Info
-        run: |
-          echo "Runner is working!"
-          uname -a
-          whoami
+  deploy:
+    runs-on: ubuntu-latest
 
-      - name: Test Environment
+    steps:
+      # Step 1: Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up SSH key
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      # Step 3: Deploy to Vagrant machine
+      - name: Deploy to Vagrant machine
         run: |
-          node -v  # Example of testing if Node.js is installed
-          npm -v
+          ssh -o StrictHostKeyChecking=no vagrant@192.168.33.101 << 'EOF'
+            mkdir home
+          EOF
