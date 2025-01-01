@@ -1,0 +1,22 @@
+name: Test Self-Hosted Runner
+
+on:
+  push:
+    branches:
+      - main  # Adjust the branch as needed
+  workflow_dispatch:  # Allows manual trigger
+
+jobs:
+  test-runner:
+    runs-on: self-hosted  # Use the self-hosted label
+    steps:
+      - name: Check Runner Info
+        run: |
+          echo "Runner is working!"
+          uname -a
+          whoami
+
+      - name: Test Environment
+        run: |
+          node -v  # Example of testing if Node.js is installed
+          npm -v
