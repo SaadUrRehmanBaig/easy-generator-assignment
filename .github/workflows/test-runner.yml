@@ -23,6 +23,7 @@ jobs:
       # Step 3: Deploy to Vagrant machine
       - name: Deploy to Vagrant machine
         run: |
-          ssh -o StrictHostKeyChecking=no vagrant@192.168.33.101 << 'EOF'
+          ssh -T -o StrictHostKeyChecking=no vagrant@192.168.33.101 << 'EOF'
             echo "Deployment started"
+            mkdir home
           EOF
