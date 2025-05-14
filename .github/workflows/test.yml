@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: dev
     env:
-      VARS: ${{ job.environment }}
+      VARS: ${{ vars }}
     steps:
       - name: Print all env vars
         run: echo $VARS
