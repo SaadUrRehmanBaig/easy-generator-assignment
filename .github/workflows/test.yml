@@ -4,7 +4,7 @@ on: [push]
 jobs:
   example-job:
     runs-on: ubuntu-latest
-    environment: dev1
+    environment: dev
     steps:
       - name: Print all env vars
         run: |
