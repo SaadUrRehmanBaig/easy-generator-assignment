@@ -11,7 +11,7 @@ jobs:
           KEY="ABC"
           echo "${!KEY}"
           echo "$VARS"
-          echo "vars.ABC"
+          echo vars.ABC
         env:
           VARS: ${{ toJSON(vars) }}
 
