@@ -8,9 +8,9 @@ jobs:
     steps:
       - name: Print all env vars
         run: |
-          $KEY = ABC
-          echo ${!key}
-          echo $VARS
+          KEY="ABC"
+          echo "${!KEY}"
+          echo "$VARS"
         env:
           VARS: ${{ toJSON(vars) }}
 
