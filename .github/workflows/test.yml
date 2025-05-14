@@ -8,10 +8,12 @@ jobs:
     steps:
       - name: Print all env vars
         run: |
-          KEY="ABC"
-          echo "${!KEY}"
-          echo "$VARS"
-          echo vars.ABC
+          touch .env
+          key="ABC"
+          
+          echo "$key=$(echo "$VARS" | jq -r ".$key")" > .env
+          cat .env
+
         env:
           VARS: ${{ toJSON(vars) }}
 
