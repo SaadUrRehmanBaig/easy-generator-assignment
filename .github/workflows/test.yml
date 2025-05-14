@@ -9,5 +9,5 @@ jobs:
       - name: Print all env vars
         run: echo $VARS
         env:
-          VARS: ${{ vars }}
+          VARS: ${{ toJSON(vars) }}
 
