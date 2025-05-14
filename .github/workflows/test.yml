@@ -7,7 +7,7 @@ jobs:
     environment: dev
     steps:
       - name: Print all env vars
+        run: echo $VARS
         env:
           VARS: ${{ vars }}
-        run: echo $VARS
 
