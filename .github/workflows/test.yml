@@ -7,5 +7,6 @@ jobs:
     env:
       MY_VAR: 'Hello'
     steps:
-      - name: Print env var
-        run: echo "Value: $MY_VAR"
+      - name: Print all env vars
+        run: printenv
+
