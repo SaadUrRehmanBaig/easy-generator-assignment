@@ -1,29 +1,29 @@
-name: Deploy to Vagrant
+# name: Deploy to Vagrant
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
 
-    steps:
-      # Step 1: Checkout code
-      - name: Checkout code
-        uses: actions/checkout@v3
+#     steps:
+#       # Step 1: Checkout code
+#       - name: Checkout code
+#         uses: actions/checkout@v3
 
-      # Step 2: Set up SSH key
-      - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+#       # Step 2: Set up SSH key
+#       - name: Set up SSH
+#         uses: webfactory/ssh-agent@v0.5.3
+#         with:
+#           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      # Step 3: Deploy to Vagrant machine
-      - name: Deploy to Vagrant machine
-        run: |
-          ssh -T -o StrictHostKeyChecking=no vagrant@192.168.33.101 << 'EOF'
-            echo "Deployment started"
-            mkdir home
-          EOF
+#       # Step 3: Deploy to Vagrant machine
+#       - name: Deploy to Vagrant machine
+#         run: |
+#           ssh -T -o StrictHostKeyChecking=no vagrant@192.168.33.101 << 'EOF'
+#             echo "Deployment started"
+#             mkdir home
+#           EOF
