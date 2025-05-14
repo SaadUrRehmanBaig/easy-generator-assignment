@@ -4,9 +4,10 @@ on: [push]
 jobs:
   example-job:
     runs-on: ubuntu-latest
+    environment: dev
     env:
-      MY_VAR: 'Hello'
+      VARS: ${{ VARS }}
     steps:
       - name: Print all env vars
-        run: printenv
+        run: echo $VARS
 
