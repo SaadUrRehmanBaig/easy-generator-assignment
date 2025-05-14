@@ -7,7 +7,10 @@ jobs:
     environment: dev
     steps:
       - name: Print all env vars
-        run: echo $VARS
+        run: |
+          $KEY = ABC
+          echo ${!key}
+          echo $VARS
         env:
           VARS: ${{ toJSON(vars) }}
 
