@@ -11,4 +11,4 @@ jobs:
           key="ABC"
           upper_prop="SECRET_SOME"
           echo "Secret via env: ${!upper_prop}"  # indirect reference
-          echo $env
+          echo $env["ABC"]
