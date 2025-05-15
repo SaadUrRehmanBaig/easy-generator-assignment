@@ -11,6 +11,7 @@ jobs:
           touch .env
           key="ABC"
           echo "Secret: ${{ secrets.SOME }}"
+          echo "var: ${{ vars.ABC }}"
           echo $env
           
           echo "$key=$(echo "$VARS" | jq -r ".$key")" > .env
