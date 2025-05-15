@@ -11,7 +11,7 @@ jobs:
           touch .env
           key="ABC"
           echo $VARS
-          echo $SECRETS
+          echo $env
           
           echo "$key=$(echo "$VARS" | jq -r ".$key")" > .env
           cat .env
