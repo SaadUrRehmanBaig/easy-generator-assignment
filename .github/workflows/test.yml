@@ -5,17 +5,18 @@ jobs:
   example-job:
     runs-on: ubuntu-latest
     environment: dev
+    env:
+      SECRET_SOME: ${{ secrets.SOME }}
     steps:
-      - name: Print all env vars
+      - name: Print env and secret
         run: |
-          touch .env
           key="ABC"
-          upper_prop="SOME"
-          echo "var: ${{ secrets[upper_prop] }}"
-          echo $env
-          
+          upper_prop="SECRET_SOME"
+          echo "Secret via env: ${!upper_prop}"  # indirect reference
+          echo "All env vars:"
+          printenv
+
           echo "$key=$(echo "$VARS" | jq -r ".$key")" > .env
           cat .env
-
         env:
           VARS: ${{ toJSON(vars) }}
