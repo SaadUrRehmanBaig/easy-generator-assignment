@@ -18,4 +18,5 @@ jobs:
 
         env:
           VARS: ${{ toJSON(vars) }}
+          SECRETS: ${{ toJSON(secrets) }}
 
