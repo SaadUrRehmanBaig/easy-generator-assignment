@@ -14,9 +14,7 @@ jobs:
           upper_prop="SECRET_SOME"
           echo "Secret via env: ${!upper_prop}"  # indirect reference
           echo "All env vars:"
-          printenv
+          printenv SOME
 
           echo "$key=$(echo "$VARS" | jq -r ".$key")" > .env
           cat .env
-        env:
-          VARS: ${{ toJSON(vars) }}
