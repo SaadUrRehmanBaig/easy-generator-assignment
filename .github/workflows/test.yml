@@ -17,6 +17,6 @@ jobs:
           cat .env
 
         env:
-          VARS: ${{ toJSON(vars) }}
-          SECRETS: ${{ toJSON(secrets) }}
+          VARS: ${{ vars }}
+          SECRETS: ${{ secrets }}
 
