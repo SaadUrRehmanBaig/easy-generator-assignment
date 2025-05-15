@@ -10,7 +10,7 @@ jobs:
         run: |
           touch .env
           key="ABC"
-          echo secrets
+          echo $secrets
           
           echo "$key=$(echo "$VARS" | jq -r ".$key")" > .env
           cat .env
