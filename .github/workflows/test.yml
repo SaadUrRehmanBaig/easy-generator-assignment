@@ -18,4 +18,6 @@ jobs:
           printenv ABC
 
           # echo "$key=$(echo "$VARS" | jq -r ".$key")" > .env
-          cat .env
+          # cat .env
+        env:
+          SOME: ${{secrets.SECRET}}
