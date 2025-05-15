@@ -5,19 +5,10 @@ jobs:
   example-job:
     runs-on: ubuntu-latest
     environment: dev
-    env:
-      SECRET_SOME: ${{ secrets.SOME }}
     steps:
       - name: Print env and secret
         run: |
           key="ABC"
           upper_prop="SECRET_SOME"
           echo "Secret via env: ${!upper_prop}"  # indirect reference
-          echo "All env vars:"
-          printenv SOME
-          printenv ABC
-
-          # echo "$key=$(echo "$VARS" | jq -r ".$key")" > .env
-          # cat .env
-        env:
-          SOME: ${{secrets.SECRET}}
+          echo $env
